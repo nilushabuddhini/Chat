@@ -10,18 +10,18 @@ function ChatForm() {
 
         const chat = {name, message}
 
-        const res = await fetch('/api/chat',{
+        const server = await fetch('/api/chat',{
             method : "POST",
             body : JSON.stringify(chat),
             headers : {
                 'Content-Type' : 'application/json'
             }
         })
-        const json = await res.json()
-        if(!res.ok){
+        const json = await server.json()
+        if(!server.ok){
             setError(json.error)
         }
-        if(res.ok){
+        if(server.ok){
             setName('')
             setMessage('')
             setError('')

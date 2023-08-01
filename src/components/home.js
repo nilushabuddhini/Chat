@@ -9,10 +9,10 @@ function Home() {
 
     useEffect(() => {
         const fetchchat = async () => {
-            const res = await fetch('/api/chat')
-            const json = await res.json()
+            const server = await fetch('/api/chat')
+            const json = await server.json()
     
-            if (res.ok){
+            if (server.ok){
                 setChats(json)
             }
         }
