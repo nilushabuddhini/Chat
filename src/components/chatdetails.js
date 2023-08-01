@@ -11,7 +11,7 @@ function ChatForm() {
 
         const chat = {name, message}
 
-        const server = await fetch('/api/chat',{
+        const server = await fetch('https://chat-data.onrender.com/api/chat',{
             method : "POST",
             body : JSON.stringify(chat),
             headers : {
