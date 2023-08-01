@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from 'axios'
 
 function ChatForm() {
     const [name, setName] = useState('')
@@ -10,7 +11,7 @@ function ChatForm() {
 
         const chat = {name, message}
 
-        const server = await fetch('https://chat-data.onrender.com/api/chat',{
+        const server = await axios.get('https://chat-data.onrender.com/api/chat',{
             method : "POST",
             body : JSON.stringify(chat),
             headers : {

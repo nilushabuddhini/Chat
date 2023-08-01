@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Chatting from './chatdetails'
 import Messages from './chatPage'
+import axios from 'axios'
 
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
 
     useEffect(() => {
         const fetchchat = async () => {
-            const server = await fetch('https://chat-data.onrender.com/api/chat')
+            const server = await axios.get('https://chat-data.onrender.com/api/chat')
             const json = await server.json()
     
             if (server.ok){
