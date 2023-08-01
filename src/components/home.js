@@ -10,7 +10,7 @@ function Home() {
 
     useEffect(() => {
         const fetchchat = async () => {
-            const server = await axios.get('https://chat-data.onrender.com/api/chat')
+            const server = await fetch('/api/chat')
             const json = await server.json()
     
             if (server.ok){
