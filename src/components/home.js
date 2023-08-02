@@ -10,7 +10,7 @@ function Home() {
 
     useEffect(() => {
         const fetchchat = async () => {
-            const server = await fetch('/api/chat')
+            const server = await fetch('/chat')
             const json = await server.json()
     
             if (server.ok){
